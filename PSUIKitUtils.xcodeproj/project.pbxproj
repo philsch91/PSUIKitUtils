@@ -6,14 +6,34 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		1790F0452260B45A00DC5199 /* PSUIKitUtils-Universal */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 1790F0462260B45A00DC5199 /* Build configuration list for PBXAggregateTarget "PSUIKitUtils-Universal" */;
+			buildPhases = (
+				1790F0492260B48900DC5199 /* Run Script */,
+			);
+			dependencies = (
+			);
+			name = "PSUIKitUtils-Universal";
+			productName = "PSUIKitUtils-Universal";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		1790F039226097B700DC5199 /* PSUIKitUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1790F037226097B700DC5199 /* PSUIKitUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1790F040226098BE00DC5199 /* PSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790F03F226098BE00DC5199 /* PSButton.swift */; };
+		1790F0422260991700DC5199 /* UIView+LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790F0412260991700DC5199 /* UIView+LayoutConstraint.swift */; };
+		1790F0442260996500DC5199 /* PSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790F0432260996500DC5199 /* PSViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1790F034226097B700DC5199 /* PSUIKitUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PSUIKitUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1790F037226097B700DC5199 /* PSUIKitUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSUIKitUtils.h; sourceTree = "<group>"; };
 		1790F038226097B700DC5199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1790F03F226098BE00DC5199 /* PSButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSButton.swift; sourceTree = "<group>"; };
+		1790F0412260991700DC5199 /* UIView+LayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LayoutConstraint.swift"; sourceTree = "<group>"; };
+		1790F0432260996500DC5199 /* PSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,8 +66,11 @@
 		1790F036226097B700DC5199 /* PSUIKitUtils */ = {
 			isa = PBXGroup;
 			children = (
+				1790F0412260991700DC5199 /* UIView+LayoutConstraint.swift */,
+				1790F03F226098BE00DC5199 /* PSButton.swift */,
 				1790F037226097B700DC5199 /* PSUIKitUtils.h */,
 				1790F038226097B700DC5199 /* Info.plist */,
+				1790F0432260996500DC5199 /* PSViewController.swift */,
 			);
 			path = PSUIKitUtils;
 			sourceTree = "<group>";
@@ -95,6 +118,10 @@
 				TargetAttributes = {
 					1790F033226097B700DC5199 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+					};
+					1790F0452260B45A00DC5199 = {
+						CreatedOnToolsVersion = 10.1;
 					};
 				};
 			};
@@ -111,6 +138,7 @@
 			projectRoot = "";
 			targets = (
 				1790F033226097B700DC5199 /* PSUIKitUtils */,
+				1790F0452260B45A00DC5199 /* PSUIKitUtils-Universal */,
 			);
 		};
 /* End PBXProject section */
@@ -125,11 +153,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1790F0492260B48900DC5199 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# Step 1. Build Device and Simulator versions\nxcodebuild -target \"${PROJECT_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nxcodebuild -target \"${PROJECT_NAME}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n# Step 2. Copy the framework structure (from iphoneos build) to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n# Step 3. Copy Swift modules from iphonesimulator build (if it exists) to the copied framework directory\nSIMULATOR_SWIFT_MODULES_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule/.\"\nif [ -d \"${SIMULATOR_SWIFT_MODULES_DIR}\" ]; then\ncp -R \"${SIMULATOR_SWIFT_MODULES_DIR}\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule\"\nfi\n\n# Step 4. Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework/${PROJECT_NAME}\"\n\n# Step 5. Convenience step to copy the framework to the project's directory\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework\" \"${PROJECT_DIR}\"\n\n# Step 6. Convenience step to open the project's directory in Finder\nopen \"${PROJECT_DIR}\"\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1790F030226097B700DC5199 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1790F040226098BE00DC5199 /* PSButton.swift in Sources */,
+				1790F0422260991700DC5199 /* UIView+LayoutConstraint.swift in Sources */,
+				1790F0442260996500DC5199 /* PSViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,7 +240,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -246,7 +298,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -261,6 +313,7 @@
 		1790F03D226097B700DC5199 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -270,6 +323,35 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PSUIKitUtils/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = at.ps.PSUIKitUtils;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1790F03E226097B700DC5199 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = BR2M9RRNF6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = PSUIKitUtils/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -281,30 +363,23 @@
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = Debug;
+			name = Release;
 		};
-		1790F03E226097B700DC5199 /* Release */ = {
+		1790F0472260B45A00DC5199 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BR2M9RRNF6;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = PSUIKitUtils/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = at.ps.PSUIKitUtils;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1790F0482260B45A00DC5199 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BR2M9RRNF6;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -325,6 +400,15 @@
 			buildConfigurations = (
 				1790F03D226097B700DC5199 /* Debug */,
 				1790F03E226097B700DC5199 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1790F0462260B45A00DC5199 /* Build configuration list for PBXAggregateTarget "PSUIKitUtils-Universal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1790F0472260B45A00DC5199 /* Debug */,
+				1790F0482260B45A00DC5199 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
