@@ -14,6 +14,7 @@ public class PSButton: UIButton {
     var pressedColor: UIColor!
     
     override public var isHighlighted: Bool {
+        /*
         willSet(newValue) {
             if(newValue) {
                 //print("newValue true")
@@ -22,7 +23,8 @@ public class PSButton: UIButton {
                 //print("newValue false")
                 self.backgroundColor = self.color
             }
-        }
+        }*/
+        
         didSet(oldValue) {
             //print("isHighLighted",self.isHighlighted)
             //print("isSelected",self.isSelected)
