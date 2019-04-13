@@ -8,12 +8,12 @@
 
 import UIKit
 
-public class PSButton: UIButton {
+open class PSButton: UIButton {
     
     var color: UIColor!
     var pressedColor: UIColor!
     
-    override public var isHighlighted: Bool {
+    override open var isHighlighted: Bool {
         /*
         willSet(newValue) {
             if(newValue) {
@@ -62,7 +62,7 @@ public class PSButton: UIButton {
         self.layer.cornerRadius = 5.0
     }
     
-    required init?(coder decoder: NSCoder) {
+    required public init?(coder decoder: NSCoder) {
         super.init(coder: decoder)
     }
     

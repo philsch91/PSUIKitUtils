@@ -8,17 +8,17 @@
 
 import UIKit
 
-public class PSViewController: UIViewController {
+open class PSViewController: UIViewController {
     
-    var notificationObservers: [Notification] = [Notification]()
+    open var notificationObservers: [Notification] = [Notification]()
 
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-    override public func viewWillAppear(_ animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.appDidEnterBackground(notification:)), name: UIApplication.didEnterBackgroundNotification, object: nil)
@@ -27,11 +27,11 @@ public class PSViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(notification:)), name: UIApplication.keyboardWillShowNotification, object: nil)
     }
     
-    override public func viewDidAppear(_ animated: Bool) {
+    override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     
-    override public func viewWillDisappear(_ animated: Bool) {
+    override open func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         let center: NotificationCenter = NotificationCenter.default
@@ -41,11 +41,11 @@ public class PSViewController: UIViewController {
         }
     }
     
-    override public func viewDidDisappear(_ animated: Bool) {
+    override open func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
     }
     
-    override public func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
         let center: NotificationCenter = NotificationCenter.default
@@ -55,28 +55,20 @@ public class PSViewController: UIViewController {
         }
     }
     
-    deinit {
-        //If your app targets iOS 9.0 and later or macOS 10.11 and later, you don't need to unregister an observer in its dealloc method.
-        //https://developer.apple.com/documentation/foundation/nsnotificationcenter/1413994-removeobserver?language=objc
-        //https://developer.apple.com/library/archive/releasenotes/Foundation/RN-FoundationOlderNotes/index.html#X10_11Notes
-        //center.removeObserver(self)
-    }
-    
     // MARK: - Notifications
     
-    @objc func appDidEnterBackground(notification: Notification) -> Void {
+    @objc open func appDidEnterBackground(notification: Notification) -> Void {
     }
     
-    @objc func appWillEnterForeground(notification: Notification) -> Void {
+    @objc open func appWillEnterForeground(notification: Notification) -> Void {
     }
     
-    @objc func keyboardWillShow(notification: Notification) -> Void {
+    @objc open func keyboardWillShow(notification: Notification) -> Void {
     }
     
-    @objc func keyboardWillHide(notification: Notification) -> Void {
+    @objc open func keyboardWillHide(notification: Notification) -> Void {
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -86,5 +78,14 @@ public class PSViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - deinit
+    
+    deinit {
+        //If your app targets iOS 9.0 and later or macOS 10.11 and later, you don't need to unregister an observer in its dealloc method.
+        //https://developer.apple.com/documentation/foundation/nsnotificationcenter/1413994-removeobserver?language=objc
+        //https://developer.apple.com/library/archive/releasenotes/Foundation/RN-FoundationOlderNotes/index.html#X10_11Notes
+        //center.removeObserver(self)
+    }
 
 }

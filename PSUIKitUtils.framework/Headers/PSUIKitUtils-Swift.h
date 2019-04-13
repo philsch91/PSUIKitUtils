@@ -164,6 +164,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if __has_feature(modules)
 @import CoreGraphics;
+@import Foundation;
 @import UIKit;
 #endif
 
@@ -187,7 +188,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 SWIFT_CLASS("_TtC12PSUIKitUtils8PSButton")
 @interface PSButton : UIButton
 @property (nonatomic, getter=isHighlighted) BOOL highlighted;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)decoder SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)decoder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
@@ -201,6 +202,10 @@ SWIFT_CLASS("_TtC12PSUIKitUtils16PSViewController")
 - (void)viewWillDisappear:(BOOL)animated;
 - (void)viewDidDisappear:(BOOL)animated;
 - (void)didReceiveMemoryWarning;
+- (void)appDidEnterBackgroundWithNotification:(NSNotification * _Nonnull)notification;
+- (void)appWillEnterForegroundWithNotification:(NSNotification * _Nonnull)notification;
+- (void)keyboardWillShowWithNotification:(NSNotification * _Nonnull)notification;
+- (void)keyboardWillHideWithNotification:(NSNotification * _Nonnull)notification;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
