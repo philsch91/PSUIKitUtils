@@ -19,7 +19,7 @@ open class PSViewController: UIViewController {
     }
     
     override open func viewWillAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        super.viewWillAppear(animated)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.appDidEnterBackground(notification:)), name: UIApplication.didEnterBackgroundNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.appWillEnterForeground(notification:)), name: UIApplication.willEnterForegroundNotification, object: nil)
