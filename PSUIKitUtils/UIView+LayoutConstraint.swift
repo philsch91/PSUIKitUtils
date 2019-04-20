@@ -17,6 +17,7 @@ public extension UIView {
         for view in views {
             let key: String = "v" + String(i)
             newViews.updateValue(view, forKey: key)
+            view.translatesAutoresizingMaskIntoConstraints = false
             i += 1
         }
         self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: visualFormat, options: options, metrics: metrics, views: newViews))
