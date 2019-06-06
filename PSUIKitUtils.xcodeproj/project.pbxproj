@@ -26,6 +26,7 @@
 		1790F0422260991700DC5199 /* UIView+LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790F0412260991700DC5199 /* UIView+LayoutConstraint.swift */; };
 		1790F0442260996500DC5199 /* PSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790F0432260996500DC5199 /* PSViewController.swift */; };
 		1790F05E2263857400DC5199 /* PSTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790F05D2263857400DC5199 /* PSTimerViewController.swift */; };
+		17FF9D5522A90DA000C59CFA /* UIImage+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FF9D5422A90DA000C59CFA /* UIImage+UILabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		1790F0412260991700DC5199 /* UIView+LayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LayoutConstraint.swift"; sourceTree = "<group>"; };
 		1790F0432260996500DC5199 /* PSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSViewController.swift; sourceTree = "<group>"; };
 		1790F05D2263857400DC5199 /* PSTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSTimerViewController.swift; sourceTree = "<group>"; };
+		17FF9D5422A90DA000C59CFA /* UIImage+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+UILabel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				1790F038226097B700DC5199 /* Info.plist */,
 				1790F0432260996500DC5199 /* PSViewController.swift */,
 				1790F05D2263857400DC5199 /* PSTimerViewController.swift */,
+				17FF9D5422A90DA000C59CFA /* UIImage+UILabel.swift */,
 			);
 			path = PSUIKitUtils;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17FF9D5522A90DA000C59CFA /* UIImage+UILabel.swift in Sources */,
 				1790F040226098BE00DC5199 /* PSButton.swift in Sources */,
 				1790F05E2263857400DC5199 /* PSTimerViewController.swift in Sources */,
 				1790F0422260991700DC5199 /* UIView+LayoutConstraint.swift in Sources */,
