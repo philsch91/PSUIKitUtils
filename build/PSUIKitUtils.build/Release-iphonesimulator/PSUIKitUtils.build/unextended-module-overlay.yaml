@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': "/Users/philipp/Library/Developer/Xcode/DerivedData/PSUIKitUtils-gfsacmmwolmvimczhabbvzhaoxmu/Build/Products/Release-iphonesimulator/PSUIKitUtils.framework/Modules"
+    'contents': [{
+      'type': 'file',
+      'name': "module.modulemap",
+      'external-contents': "/Users/philipp/Documents/Projekte/PSUIKitUtils/build/PSUIKitUtils.build/Release-iphonesimulator/PSUIKitUtils.build/unextended-module.modulemap",
+    }]
+  }]
+}

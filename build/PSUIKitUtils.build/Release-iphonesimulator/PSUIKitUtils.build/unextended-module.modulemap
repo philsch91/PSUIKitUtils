@@ -1,0 +1,10 @@
+framework module PSUIKitUtils {
+  umbrella header "PSUIKitUtils.h"
+
+  export *
+  module * { export * }
+}
+
+module PSUIKitUtils.__Swift {
+    exclude header "PSUIKitUtils-Swift.h"
+}
