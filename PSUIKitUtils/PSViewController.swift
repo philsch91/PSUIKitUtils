@@ -11,10 +11,21 @@ import UIKit
 open class PSViewController: UIViewController {
     
     open var notificationObservers: [Notification] = [Notification]()
-
+    
+    override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    public convenience init() {
+        self.init(nibName: nil, bundle: nil)
+    }
+    
     override open func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     

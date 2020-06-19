@@ -21,6 +21,9 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		176D74F2249CEE92000889BD /* UIApplication+SafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176D74F1249CEE92000889BD /* UIApplication+SafariViewController.swift */; };
+		176D74F4249CF385000889BD /* PSRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176D74F3249CF385000889BD /* PSRectangleView.swift */; };
+		176D74F6249D0770000889BD /* PSCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176D74F5249D0770000889BD /* PSCircleView.swift */; };
 		1790F039226097B700DC5199 /* PSUIKitUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1790F037226097B700DC5199 /* PSUIKitUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1790F040226098BE00DC5199 /* PSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790F03F226098BE00DC5199 /* PSButton.swift */; };
 		1790F0422260991700DC5199 /* UIView+LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790F0412260991700DC5199 /* UIView+LayoutConstraint.swift */; };
@@ -30,6 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		176D74F1249CEE92000889BD /* UIApplication+SafariViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+SafariViewController.swift"; sourceTree = "<group>"; };
+		176D74F3249CF385000889BD /* PSRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSRectangleView.swift; sourceTree = "<group>"; };
+		176D74F5249D0770000889BD /* PSCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSCircleView.swift; sourceTree = "<group>"; };
 		1790F034226097B700DC5199 /* PSUIKitUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PSUIKitUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1790F037226097B700DC5199 /* PSUIKitUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSUIKitUtils.h; sourceTree = "<group>"; };
 		1790F038226097B700DC5199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +83,9 @@
 				1790F0432260996500DC5199 /* PSViewController.swift */,
 				1790F05D2263857400DC5199 /* PSTimerViewController.swift */,
 				17FF9D5422A90DA000C59CFA /* UIImage+UILabel.swift */,
+				176D74F1249CEE92000889BD /* UIApplication+SafariViewController.swift */,
+				176D74F3249CF385000889BD /* PSRectangleView.swift */,
+				176D74F5249D0770000889BD /* PSCircleView.swift */,
 			);
 			path = PSUIKitUtils;
 			sourceTree = "<group>";
@@ -188,8 +197,11 @@
 				17FF9D5522A90DA000C59CFA /* UIImage+UILabel.swift in Sources */,
 				1790F040226098BE00DC5199 /* PSButton.swift in Sources */,
 				1790F05E2263857400DC5199 /* PSTimerViewController.swift in Sources */,
+				176D74F2249CEE92000889BD /* UIApplication+SafariViewController.swift in Sources */,
 				1790F0422260991700DC5199 /* UIView+LayoutConstraint.swift in Sources */,
+				176D74F6249D0770000889BD /* PSCircleView.swift in Sources */,
 				1790F0442260996500DC5199 /* PSViewController.swift in Sources */,
+				176D74F4249CF385000889BD /* PSRectangleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
