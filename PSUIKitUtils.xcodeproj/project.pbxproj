@@ -29,8 +29,30 @@
 		1790F0422260991700DC5199 /* UIView+LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790F0412260991700DC5199 /* UIView+LayoutConstraint.swift */; };
 		1790F0442260996500DC5199 /* PSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790F0432260996500DC5199 /* PSViewController.swift */; };
 		1790F05E2263857400DC5199 /* PSTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790F05D2263857400DC5199 /* PSTimerViewController.swift */; };
+		17BA9547249F665A00F77E82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BA9546249F665A00F77E82 /* AppDelegate.swift */; };
+		17BA9549249F665A00F77E82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BA9548249F665A00F77E82 /* SceneDelegate.swift */; };
+		17BA954B249F665A00F77E82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BA954A249F665A00F77E82 /* ViewController.swift */; };
+		17BA954E249F665A00F77E82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17BA954C249F665A00F77E82 /* Main.storyboard */; };
+		17BA9550249F665B00F77E82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17BA954F249F665B00F77E82 /* Assets.xcassets */; };
+		17BA9553249F665C00F77E82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17BA9551249F665B00F77E82 /* LaunchScreen.storyboard */; };
+		17BA955A249F6BC300F77E82 /* PSUIKitUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17BA9559249F6BC300F77E82 /* PSUIKitUtils.framework */; };
+		17BA955B249F6BC300F77E82 /* PSUIKitUtils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17BA9559249F6BC300F77E82 /* PSUIKitUtils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		17FF9D5522A90DA000C59CFA /* UIImage+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FF9D5422A90DA000C59CFA /* UIImage+UILabel.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		17BA955C249F6BC300F77E82 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				17BA955B249F6BC300F77E82 /* PSUIKitUtils.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		176D74F1249CEE92000889BD /* UIApplication+SafariViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+SafariViewController.swift"; sourceTree = "<group>"; };
@@ -43,6 +65,15 @@
 		1790F0412260991700DC5199 /* UIView+LayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LayoutConstraint.swift"; sourceTree = "<group>"; };
 		1790F0432260996500DC5199 /* PSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSViewController.swift; sourceTree = "<group>"; };
 		1790F05D2263857400DC5199 /* PSTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSTimerViewController.swift; sourceTree = "<group>"; };
+		17BA9544249F665A00F77E82 /* PSUIKitUtilsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSUIKitUtilsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		17BA9546249F665A00F77E82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		17BA9548249F665A00F77E82 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		17BA954A249F665A00F77E82 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		17BA954D249F665A00F77E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		17BA954F249F665B00F77E82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		17BA9552249F665B00F77E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		17BA9554249F665C00F77E82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17BA9559249F6BC300F77E82 /* PSUIKitUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PSUIKitUtils.framework; sourceTree = "<group>"; };
 		17FF9D5422A90DA000C59CFA /* UIImage+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+UILabel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,6 +85,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		17BA9541249F665A00F77E82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17BA955A249F6BC300F77E82 /* PSUIKitUtils.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -61,7 +100,9 @@
 			isa = PBXGroup;
 			children = (
 				1790F036226097B700DC5199 /* PSUIKitUtils */,
+				17BA9545249F665A00F77E82 /* PSUIKitUtilsDemo */,
 				1790F035226097B700DC5199 /* Products */,
+				17BA9558249F6BC300F77E82 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				1790F034226097B700DC5199 /* PSUIKitUtils.framework */,
+				17BA9544249F665A00F77E82 /* PSUIKitUtilsDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,6 +130,28 @@
 				176D74F5249D0770000889BD /* PSCircleView.swift */,
 			);
 			path = PSUIKitUtils;
+			sourceTree = "<group>";
+		};
+		17BA9545249F665A00F77E82 /* PSUIKitUtilsDemo */ = {
+			isa = PBXGroup;
+			children = (
+				17BA9546249F665A00F77E82 /* AppDelegate.swift */,
+				17BA9548249F665A00F77E82 /* SceneDelegate.swift */,
+				17BA954A249F665A00F77E82 /* ViewController.swift */,
+				17BA954C249F665A00F77E82 /* Main.storyboard */,
+				17BA954F249F665B00F77E82 /* Assets.xcassets */,
+				17BA9551249F665B00F77E82 /* LaunchScreen.storyboard */,
+				17BA9554249F665C00F77E82 /* Info.plist */,
+			);
+			path = PSUIKitUtilsDemo;
+			sourceTree = "<group>";
+		};
+		17BA9558249F6BC300F77E82 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				17BA9559249F6BC300F77E82 /* PSUIKitUtils.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,12 +186,31 @@
 			productReference = 1790F034226097B700DC5199 /* PSUIKitUtils.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		17BA9543249F665A00F77E82 /* PSUIKitUtilsDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17BA9557249F665C00F77E82 /* Build configuration list for PBXNativeTarget "PSUIKitUtilsDemo" */;
+			buildPhases = (
+				17BA9540249F665A00F77E82 /* Sources */,
+				17BA9541249F665A00F77E82 /* Frameworks */,
+				17BA9542249F665A00F77E82 /* Resources */,
+				17BA955C249F6BC300F77E82 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PSUIKitUtilsDemo;
+			productName = PSUIKitUtilsDemo;
+			productReference = 17BA9544249F665A00F77E82 /* PSUIKitUtilsDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		1790F02B226097B700DC5199 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Philipp Schunker";
 				TargetAttributes = {
@@ -138,6 +221,9 @@
 					1790F0452260B45A00DC5199 = {
 						CreatedOnToolsVersion = 10.1;
 					};
+					17BA9543249F665A00F77E82 = {
+						CreatedOnToolsVersion = 11.3;
+					};
 				};
 			};
 			buildConfigurationList = 1790F02E226097B700DC5199 /* Build configuration list for PBXProject "PSUIKitUtils" */;
@@ -146,6 +232,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 1790F02A226097B700DC5199;
 			productRefGroup = 1790F035226097B700DC5199 /* Products */;
@@ -154,6 +241,7 @@
 			targets = (
 				1790F033226097B700DC5199 /* PSUIKitUtils */,
 				1790F0452260B45A00DC5199 /* PSUIKitUtils-Universal */,
+				17BA9543249F665A00F77E82 /* PSUIKitUtilsDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -163,6 +251,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17BA9542249F665A00F77E82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17BA9553249F665C00F77E82 /* LaunchScreen.storyboard in Resources */,
+				17BA9550249F665B00F77E82 /* Assets.xcassets in Resources */,
+				17BA954E249F665A00F77E82 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +303,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		17BA9540249F665A00F77E82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17BA954B249F665A00F77E82 /* ViewController.swift in Sources */,
+				17BA9547249F665A00F77E82 /* AppDelegate.swift in Sources */,
+				17BA9549249F665A00F77E82 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		17BA954C249F665A00F77E82 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17BA954D249F665A00F77E82 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		17BA9551249F665B00F77E82 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17BA9552249F665B00F77E82 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1790F03A226097B700DC5199 /* Debug */ = {
@@ -417,6 +544,52 @@
 			};
 			name = Release;
 		};
+		17BA9555249F665C00F77E82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BR2M9RRNF6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = PSUIKitUtilsDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = at.schunker.PSUIKitUtilsDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		17BA9556249F665C00F77E82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BR2M9RRNF6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = PSUIKitUtilsDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = at.schunker.PSUIKitUtilsDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -443,6 +616,15 @@
 			buildConfigurations = (
 				1790F0472260B45A00DC5199 /* Debug */,
 				1790F0482260B45A00DC5199 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17BA9557249F665C00F77E82 /* Build configuration list for PBXNativeTarget "PSUIKitUtilsDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17BA9555249F665C00F77E82 /* Debug */,
+				17BA9556249F665C00F77E82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
