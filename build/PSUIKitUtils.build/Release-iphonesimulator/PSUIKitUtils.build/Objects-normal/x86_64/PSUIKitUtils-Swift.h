@@ -211,6 +211,15 @@ SWIFT_CLASS("_TtC12PSUIKitUtils8PSButton")
 @end
 
 
+SWIFT_CLASS("_TtC12PSUIKitUtils12PSCircleView")
+@interface PSCircleView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init;
+- (void)drawRect:(CGRect)rect;
+@end
+
+
 SWIFT_CLASS("_TtC12PSUIKitUtils15PSRectangleView")
 @interface PSRectangleView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;

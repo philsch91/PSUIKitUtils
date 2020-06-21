@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PSCircleView: UIView {
+open class PSCircleView: UIView {
     
     open var strokeColor: UIColor! = UIColor.clear
     open var lineWidth: CGFloat = 0

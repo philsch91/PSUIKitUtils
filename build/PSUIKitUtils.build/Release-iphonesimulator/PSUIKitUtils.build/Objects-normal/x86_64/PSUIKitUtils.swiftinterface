@@ -47,6 +47,15 @@ extension UIApplication {
 extension UIView {
   public func addVisualConstraints(visualFormat: Swift.String, options: UIKit.NSLayoutConstraint.FormatOptions, metrics: [Swift.String : Any]?, views: [UIKit.UIView])
 }
+@objc open class PSCircleView : UIKit.UIView {
+  open var strokeColor: UIKit.UIColor!
+  open var lineWidth: CoreGraphics.CGFloat
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc convenience dynamic public init()
+  @objc override dynamic open func draw(_ rect: CoreGraphics.CGRect)
+  @objc deinit
+}
 @objc open class PSViewController : UIKit.UIViewController {
   open var notificationObservers: [Foundation.Notification]
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
