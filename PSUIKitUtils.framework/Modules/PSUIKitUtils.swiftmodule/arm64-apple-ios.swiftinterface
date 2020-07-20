@@ -44,6 +44,9 @@ extension UIImage {
 extension UIApplication {
   open func openUrlInSafariVC(_ url: Foundation.URL, from viewController: UIKit.UIViewController? = nil)
 }
+extension Bundle {
+  open func isTestFlight() -> Swift.Bool
+}
 extension UIView {
   public func addVisualConstraints(visualFormat: Swift.String, options: UIKit.NSLayoutConstraint.FormatOptions, metrics: [Swift.String : Any]?, views: [UIKit.UIView])
 }

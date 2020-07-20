@@ -1,11 +1,12 @@
 version: "Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
 options: "5b1361fc7fbd8c9f66e7da21a4d1fd87"
-build_time: [1592750131, 719712000]
+build_time: [1595242379, 914087000]
 inputs:
   "/Users/philipp/Documents/dev/PSUIKitUtils/PSUIKitUtils/UIImage+UILabel.swift": [9223372036, 854775807]
   "/Users/philipp/Documents/dev/PSUIKitUtils/PSUIKitUtils/PSButton.swift": [9223372036, 854775807]
   "/Users/philipp/Documents/dev/PSUIKitUtils/PSUIKitUtils/PSTimerViewController.swift": [9223372036, 854775807]
   "/Users/philipp/Documents/dev/PSUIKitUtils/PSUIKitUtils/UIApplication+SafariViewController.swift": [9223372036, 854775807]
+  "/Users/philipp/Documents/dev/PSUIKitUtils/PSUIKitUtils/Bundle+URL.swift": [9223372036, 854775807]
   "/Users/philipp/Documents/dev/PSUIKitUtils/PSUIKitUtils/UIView+LayoutConstraint.swift": [9223372036, 854775807]
   "/Users/philipp/Documents/dev/PSUIKitUtils/PSUIKitUtils/PSCircleView.swift": [9223372036, 854775807]
   "/Users/philipp/Documents/dev/PSUIKitUtils/PSUIKitUtils/PSViewController.swift": [9223372036, 854775807]

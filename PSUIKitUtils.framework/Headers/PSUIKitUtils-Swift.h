@@ -201,6 +201,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+
+
 @class NSCoder;
 
 SWIFT_CLASS("_TtC12PSUIKitUtils8PSButton")
@@ -228,7 +230,6 @@ SWIFT_CLASS("_TtC12PSUIKitUtils15PSRectangleView")
 - (void)drawRect:(CGRect)rect;
 @end
 
-@class NSBundle;
 
 SWIFT_CLASS("_TtC12PSUIKitUtils16PSViewController")
 @interface PSViewController : UIViewController
