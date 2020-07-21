@@ -9,9 +9,10 @@
 import Foundation
 import UIKit
 
-public extension UIView {
-    public func addVisualConstraints(visualFormat: String, options: NSLayoutConstraint.FormatOptions, metrics: [String: Any]?, views: [UIView]) -> Void {
-        
+@objc
+extension UIView {
+    
+    open func addVisualConstraints(visualFormat: String, options: NSLayoutConstraint.FormatOptions, metrics: [String: Any]?, views: [UIView]) -> Void {
         var newViews: [String: UIView] = ["v0":self]
         var i: Int = 1
         for view in views {

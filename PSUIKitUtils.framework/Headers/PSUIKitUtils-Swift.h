@@ -201,6 +201,11 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+
+@interface NSBundle (SWIFT_EXTENSION(PSUIKitUtils))
+- (BOOL)isTestFlight SWIFT_WARN_UNUSED_RESULT;
+@end
+
 @class NSCoder;
 
 SWIFT_CLASS("_TtC12PSUIKitUtils8PSButton")
@@ -228,7 +233,6 @@ SWIFT_CLASS("_TtC12PSUIKitUtils15PSRectangleView")
 - (void)drawRect:(CGRect)rect;
 @end
 
-@class NSBundle;
 
 SWIFT_CLASS("_TtC12PSUIKitUtils16PSViewController")
 @interface PSViewController : UIViewController
@@ -263,10 +267,20 @@ SWIFT_CLASS("_TtC12PSUIKitUtils21PSTimerViewController")
 
 
 
+@interface UIApplication (SWIFT_EXTENSION(PSUIKitUtils))
+- (void)openUrlInSafariVC:(NSURL * _Nonnull)url from:(UIViewController * _Nullable)viewController;
+@end
+
+@class UILabel;
+
+@interface UIImage (SWIFT_EXTENSION(PSUIKitUtils))
++ (UIImage * _Nullable)imageWithLabel:(UILabel * _Nonnull)label SWIFT_WARN_UNUSED_RESULT;
+@end
 
 
-
-
+@interface UIView (SWIFT_EXTENSION(PSUIKitUtils))
+- (void)addVisualConstraintsWithVisualFormat:(NSString * _Nonnull)visualFormat options:(NSLayoutFormatOptions)options metrics:(NSDictionary<NSString *, id> * _Nullable)metrics views:(NSArray<UIView *> * _Nonnull)views;
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

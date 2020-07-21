@@ -7,8 +7,8 @@ import Foundation
 import SafariServices
 import Swift
 import UIKit
-extension UIImage {
-  public class func imageWithLabel(label: UIKit.UILabel) -> UIKit.UIImage?
+@objc extension UIImage {
+  @objc dynamic public class func imageWithLabel(_ label: UIKit.UILabel) -> UIKit.UIImage?
 }
 @objc open class PSButton : UIKit.UIButton {
   @objc override dynamic open var isHighlighted: Swift.Bool {
@@ -41,11 +41,14 @@ extension UIImage {
   @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-extension UIApplication {
-  open func openUrlInSafariVC(_ url: Foundation.URL, from viewController: UIKit.UIViewController? = nil)
+@objc extension UIApplication {
+  @objc dynamic open func openUrlInSafariVC(_ url: Foundation.URL, from viewController: UIKit.UIViewController? = nil)
 }
-extension UIView {
-  public func addVisualConstraints(visualFormat: Swift.String, options: UIKit.NSLayoutConstraint.FormatOptions, metrics: [Swift.String : Any]?, views: [UIKit.UIView])
+@objc extension Bundle {
+  @objc dynamic open func isTestFlight() -> Swift.Bool
+}
+@objc extension UIView {
+  @objc dynamic open func addVisualConstraints(visualFormat: Swift.String, options: UIKit.NSLayoutConstraint.FormatOptions, metrics: [Swift.String : Any]?, views: [UIKit.UIView])
 }
 @objc open class PSCircleView : UIKit.UIView {
   open var strokeColor: UIKit.UIColor!

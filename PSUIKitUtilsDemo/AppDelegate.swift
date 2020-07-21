@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import PSUIKitUtils
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         UIDevice.current.isProximityMonitoringEnabled = true
+        let isTestFlight: Bool = Bundle.main.isTestFlight()
+        print("isTestFlight: \(isTestFlight)")
         return true
     }
 

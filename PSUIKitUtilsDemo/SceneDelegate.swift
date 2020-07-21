@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         mainTabBarItemLabel.text = "🚀"
         mainTabBarItemLabel.textAlignment = NSTextAlignment.center
         
-        let mainTabBarItemImage = UIImage.imageWithLabel(label: mainTabBarItemLabel)
+        let mainTabBarItemImage = UIImage.imageWithLabel(mainTabBarItemLabel)
         
         navigationController.tabBarItem = UITabBarItem(title: "PSUIKitUtilsDemo", image: mainTabBarItemImage, tag: 0)
         

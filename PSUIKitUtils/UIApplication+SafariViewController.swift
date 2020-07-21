@@ -9,6 +9,7 @@
 import UIKit
 import SafariServices
 
+@objc
 extension UIApplication {
     
     open func openUrlInSafariVC(_ url: URL, from viewController: UIViewController? = nil) {
