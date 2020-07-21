@@ -11,7 +11,8 @@ import UIKit
 
 @objc
 public extension UIImage {
-    class func imageWithLabel(label: UILabel) -> UIImage? {
+    
+    class func imageWithLabel(_ label: UILabel) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(label.bounds.size, false, 0.0)
         label.layer.render(in: UIGraphicsGetCurrentContext()!)
         let img = UIGraphicsGetImageFromCurrentImageContext()

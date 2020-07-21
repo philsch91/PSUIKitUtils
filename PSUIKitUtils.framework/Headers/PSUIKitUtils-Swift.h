@@ -274,7 +274,7 @@ SWIFT_CLASS("_TtC12PSUIKitUtils21PSTimerViewController")
 @class UILabel;
 
 @interface UIImage (SWIFT_EXTENSION(PSUIKitUtils))
-+ (UIImage * _Nullable)imageWithLabelWithLabel:(UILabel * _Nonnull)label SWIFT_WARN_UNUSED_RESULT;
++ (UIImage * _Nullable)imageWithLabel:(UILabel * _Nonnull)label SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
