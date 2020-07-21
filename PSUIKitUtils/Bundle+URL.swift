@@ -8,6 +8,7 @@
 
 import Foundation
 
+@objc
 extension Bundle {
     
     open func isTestFlight() -> Bool {

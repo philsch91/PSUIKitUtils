@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+@objc
 public extension UIImage {
     class func imageWithLabel(label: UILabel) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(label.bounds.size, false, 0.0)
