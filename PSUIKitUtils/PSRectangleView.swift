@@ -14,7 +14,7 @@ open class PSRectangleView: UIView {
     open var strokeColor: UIColor!
     open var lineWidth: CGFloat = 0
     
-    override public init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
@@ -28,7 +28,7 @@ open class PSRectangleView: UIView {
 
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override open func draw(_ rect: CGRect) {
+    open override func draw(_ rect: CGRect) {
         // Drawing code
         let boundsRect: CGRect = self.bounds
         let context: CGContext! = UIGraphicsGetCurrentContext()

@@ -211,8 +211,9 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 SWIFT_CLASS("_TtC12PSUIKitUtils8PSButton")
 @interface PSButton : UIButton
 @property (nonatomic, getter=isHighlighted) BOOL highlighted;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)decoder OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init;
 @end
 
 
@@ -280,6 +281,11 @@ SWIFT_CLASS("_TtC12PSUIKitUtils21PSTimerViewController")
 
 @interface UIView (SWIFT_EXTENSION(PSUIKitUtils))
 - (void)addVisualConstraintsWithVisualFormat:(NSString * _Nonnull)visualFormat options:(NSLayoutFormatOptions)options metrics:(NSDictionary<NSString *, id> * _Nullable)metrics views:(NSArray<UIView *> * _Nonnull)views;
+@end
+
+
+@interface NSUserDefaults (SWIFT_EXTENSION(PSUIKitUtils))
+- (void)setStateRestorationDebugging:(BOOL)value;
 @end
 
 #if __has_attribute(external_source_symbol)

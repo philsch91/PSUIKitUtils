@@ -10,10 +10,10 @@ import UIKit
 
 open class PSButton: UIButton {
     
-    var color: UIColor!
-    var pressedColor: UIColor!
+    var color: UIColor?
+    var pressedColor: UIColor?
     
-    override open var isHighlighted: Bool {
+    open override var isHighlighted: Bool {
         /*
         willSet(newValue) {
             if(newValue) {
@@ -29,41 +29,84 @@ open class PSButton: UIButton {
             //print("isHighLighted",self.isHighlighted)
             //print("isSelected",self.isSelected)
             
-            if(oldValue) {
-                //print("oldValue true")
-                self.backgroundColor = self.color
+            if (oldValue) {
+                guard let _color = self.color else {
+                    return
+                }
+                self.backgroundColor = _color
             } else {
-                //print("oldValue false")
-                self.backgroundColor = self.pressedColor
+                guard let _pressedColor = self.pressedColor else {
+                    return
+                }
+                self.backgroundColor = _pressedColor
             }
-            
-            /*
-            if self.isHighlighted {
-                self.backgroundColor = self.color
-            } else {
-                self.backgroundColor = self.pressedColor
-            }*/
         }
     }
     
-    public init(color: UIColor, pressedColor: UIColor) {
-        super.init(frame: CGRect.zero)
-        self.color = color
-        self.pressedColor = pressedColor
-        self.layer.backgroundColor = self.color.cgColor
-        self.layer.cornerRadius = 5.0
-    }
-    
-    public init(frame: CGRect, color: UIColor, pressedColor: UIColor) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
+    }
+
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+
+        self.color = UIColor.systemBlue
+        self.pressedColor = UIColor.blue
+        self.configure()
+    }
+
+    public convenience init() {
+        self.init(frame: CGRect.zero)
+
+        self.color = UIColor.systemBlue
+        self.pressedColor = UIColor.blue
+        self.configure()
+    }
+
+    public convenience init(color: UIColor, pressedColor: UIColor) {
+        self.init(frame: CGRect.zero)
+
         self.color = color
         self.pressedColor = pressedColor
-        self.layer.backgroundColor = self.color.cgColor
-        self.layer.cornerRadius = 5.0
+        self.configure()
     }
-    
-    required public init?(coder decoder: NSCoder) {
-        super.init(coder: decoder)
+
+    public convenience init(frame: CGRect, color: UIColor, pressedColor: UIColor) {
+        self.init(frame: frame)
+
+        self.color = color
+        self.pressedColor = pressedColor
+        self.configure()
+    }
+
+    private func configure() {
+        self.layer.backgroundColor = self.color?.cgColor
+        self.layer.cornerRadius = 5.0
+
+        self.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        //self.setTitleColor(UIColor.white, for: UIControl.State.selected)
+        //self.setTitleColor(UIColor.white, for: UIControl.State.focused)
+        self.setTitleColor(UIColor.white, for: UIControl.State.highlighted)
+
+        if let _pressedColor = self.pressedColor {
+            self.setBackgroundColor(color: _pressedColor, forState: UIControl.State.highlighted)
+        }
+    }
+
+    public func setBackgroundColor(color: UIColor, forState: UIControl.State) {
+        self.clipsToBounds = true
+        UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
+
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return
+        }
+
+        //context.setFillColor(self.pressedColor?.cgColor)
+        context.setFillColor(color.cgColor)
+        context.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.setBackgroundImage(image, for: forState)
     }
     
     /*
