@@ -11,8 +11,11 @@ import PSUIKitUtils
 
 class ViewController: PSViewController {
     
+    // Stored property mainButton without initial value prevents synthesized initializers
     var squareView: PSRectangleView!
     var circleView: PSCircleView!
+    var mainButton: PSButton!
+    var secondaryButton: PSButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,8 @@ class ViewController: PSViewController {
         self.title = "PSUIKitUtilsDemo"
         self.view.backgroundColor = UIColor.white
         self.setupUI()
+
+        UserDefaults.standard.setStateRestorationDebugging(true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,6 +83,33 @@ class ViewController: PSViewController {
         self.circleView = circleView;
         
         self.view.addSubview(self.circleView)
+
+        let mainButton = PSButton()
+        mainButton.frame = CGRect(x: self.view.frame.size.width / 2 - (82 / 2), y: square.origin.y, width: 82, height: 38)
+        mainButton.center.y += self.squareView.frame.size.height + 10
+        mainButton.setTitle("Button 1", for: UIControl.State.normal)
+        mainButton.addTarget(self, action: #selector(self.buttonTapped(_:)), for: UIControl.Event.touchUpInside)
+        self.mainButton = mainButton
+
+        self.view.addSubview(self.mainButton)
+
+        let secondaryButton = PSButton(frame: CGRect(origin: CGPoint(), size: CGSize(width: 82, height: 38)), color: UIColor.systemGreen, pressedColor: UIColor.green)
+        secondaryButton.center.x = self.view.center.x
+        print(secondaryButton.center.y) // = height/2
+        secondaryButton.center.y *= 2
+        secondaryButton.center.y += self.mainButton.center.y + 10
+        secondaryButton.setTitle("Button 2", for: UIControl.State.normal)
+        secondaryButton.addTarget(self, action: #selector(self.buttonTapped(_:)), for: UIControl.Event.touchUpInside)
+        self.secondaryButton = secondaryButton
+
+        self.view.addSubview(self.secondaryButton)
+    }
+
+    @objc func buttonTapped(_ sender: UIButton) -> Void {
+        print(sender)
+        if let title = sender.title(for: UIControl.State.normal) {
+            print(title)
+        }
     }
     
     //MARK: - Notifications

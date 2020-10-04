@@ -15,10 +15,12 @@ import UIKit
     @objc get
     @objc set
   }
-  public init(color: UIKit.UIColor, pressedColor: UIKit.UIColor)
-  public init(frame: CoreGraphics.CGRect, color: UIKit.UIColor, pressedColor: UIKit.UIColor)
-  @objc required dynamic public init?(coder decoder: Foundation.NSCoder)
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc convenience dynamic public init()
+  convenience public init(color: UIKit.UIColor, pressedColor: UIKit.UIColor)
+  convenience public init(frame: CoreGraphics.CGRect, color: UIKit.UIColor, pressedColor: UIKit.UIColor)
+  public func setBackgroundColor(color: UIKit.UIColor, forState: UIKit.UIControl.State)
   @objc deinit
 }
 @objc open class PSTimerViewController : PSUIKitUtils.PSViewController {
@@ -58,6 +60,9 @@ import UIKit
   @objc convenience dynamic public init()
   @objc override dynamic open func draw(_ rect: CoreGraphics.CGRect)
   @objc deinit
+}
+@objc extension UserDefaults {
+  @objc dynamic open func setStateRestorationDebugging(_ value: Swift.Bool)
 }
 @objc open class PSViewController : UIKit.UIViewController {
   open var notificationObservers: [Foundation.Notification]
